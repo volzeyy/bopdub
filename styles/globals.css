@@ -1,0 +1,11 @@
+:root {
+    --background-color: #fff;
+    --background-color-secondary: rgba(0, 0, 0, 0.05);
+    --text-color: #000;
+    --text-color-secondary: rgba(0, 0, 0, 0.5); 
+}
+
+body {
+    margin: 0px;
+    background-color: var(--background-color);
+}
