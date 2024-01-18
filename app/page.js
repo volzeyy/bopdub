@@ -1,9 +1,11 @@
 "use client"
-
-import { useEffect, useState, useRef } from "react";
-import FfmpegTest from '@/components/FFmpeg';
-import VideoUploadButton from '@/components/VideoUploadButton';
 import styles from '@/styles/page.module.css'
+import { useEffect, useState, useRef, Fragment } from "react";
+import VideoUploadButton from '@/components/VideoUploadButton';
+import GameInstructions from "@/components/GameInstructions";
+import Logo from "@/components/Logo";
+import VoiceAct from "@/components/VoiceAct";
+
 
 function Home() {
   const [videoUrl, setVideoUrl] = useState(null);
@@ -20,20 +22,26 @@ function Home() {
 
   return (
     <main className={styles.main}>
-      {!videoUrl ?  
-        <div className={styles.container}>
-          <h1>Upload a video clip!</h1>
+      <header>
+        <Logo />
+      </header>
+      <div className={styles.container}>
+      {!videoUrl ?
+        <Fragment>
+          <h2>Upload a video clip!</h2>
           <VideoUploadButton 
             setVideoUrl={setVideoUrl}
           />
           <p className={styles.note}>Only .MP4 supported</p>
-        </div>
+        </Fragment>
       : (
-        <video ref={videoRef}>
-          <source src={videoUrl} type="video/mp4" />
-          <source src={videoUrl} type="video/webm" />
-        </video>
+        <VoiceAct 
+          videoRef={videoRef} 
+          videoUrl={videoUrl}
+        />
       )}
+      </div>
+      <GameInstructions />
     </main>
   )
 }

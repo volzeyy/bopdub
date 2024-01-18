@@ -1,14 +1,17 @@
 .main {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 30px;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 1200px;
   padding: 20px;
   gap: 10px;
 }
@@ -16,4 +19,14 @@
 .note {
   font-size: 12px;
   color: var(--text-color-secondary);
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 0px;
+  }
+
+  .video {
+    border-radius: 0px;
+  }
 }
