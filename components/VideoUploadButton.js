@@ -3,7 +3,8 @@
 import styles from '@/styles/VideoUploadButton.module.css';
 import UploadIcon from '@mui/icons-material/Upload';
 
-function VideoUploadButton({ setVideoUrl }) {
+function VideoUploadButton(props) {
+  const { setVideoUrl } = props;
 
   function handleVideoUpload(event) {
     const files = event.target.files;
