@@ -16,7 +16,6 @@ function Home() {
     if (videoUrl) {
       const video = videoRef.current;
       video.load();
-      video.play();
     }
   }, [videoUrl]);
 
