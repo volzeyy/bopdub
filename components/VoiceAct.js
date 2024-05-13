@@ -94,6 +94,7 @@ function VoiceAct(props) {
   };
 
   function startRecording() {
+    console.log("clicked...")
     setIsReady(true);
     setChunks([]);
 

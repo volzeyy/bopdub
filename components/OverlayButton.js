@@ -7,6 +7,7 @@ function OverlayButton(props) {
     <button 
         className={styles.button}
         onClick={startRecording}
+        style={{zIndex: 2}}
     >
         Ready?
     </button>
